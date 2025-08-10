@@ -56,7 +56,6 @@ class MockFlutterWindow : public FlutterWindow {
 
   MOCK_METHOD(void, OnDpiScale, (unsigned int), (override));
   MOCK_METHOD(void, OnResize, (unsigned int, unsigned int), (override));
-
   MOCK_METHOD(float, GetScrollOffsetMultiplier, (), (override));
   MOCK_METHOD(float, GetDpiScale, (), (override));
   MOCK_METHOD(void, UpdateCursorRect, (const Rect&), (override));
