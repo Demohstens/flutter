@@ -43,10 +43,10 @@ class WindowsProcTable {
                               POINTER_INFO* pointer_info) const;
   // Retrieves the pointer info for a specified pointer.
   //
-  // Used to react differently to touch or pen inputs. Returns false on failure.
-  // Available on Windows 8 and newer, otherwise returns false.
+  // Used to retrieve information about the pen being used. Returns false on
+  // failure. Available on Windows 8 and newer, otherwise returns false.
   virtual BOOL GetPointerPenInfo(UINT32 pointer_id,
-                                 POINTER_PEN_INFO* pointer_info) const;
+                                 POINTER_PEN_INFO* pointer_pen_info) const;
   // Get the preferred languages for the thread, and optionally the process,
   // and system, in that order, depending on the flags.
   //
@@ -179,7 +179,7 @@ class WindowsProcTable {
   using GetPointerInfo_ = BOOL __stdcall(UINT32 pointerId,
                                          POINTER_INFO* pointerInfo);
   using GetPointerPenInfo_ = BOOL __stdcall(UINT32 pointerId,
-                                            POINTER_PEN_INFO* pointerPenInfo);
+                                            POINTER_PEN_INFO* penInfo);
   using EnableNonClientDpiScaling_ = BOOL __stdcall(HWND hwnd);
   using SetWindowCompositionAttribute_ =
       BOOL __stdcall(HWND, WINDOWCOMPOSITIONATTRIBDATA*);

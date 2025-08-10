@@ -15,6 +15,8 @@ WindowsProcTable::WindowsProcTable() {
       user32_->ResolveFunction<GetPointerType_*>("GetPointerType");
   get_pointer_info_ =
       user32_->ResolveFunction<GetPointerInfo_*>("GetPointerInfo");
+  get_pointer_pen_info_ =
+      user32_->ResolveFunction<GetPointerPenInfo_*>("GetPointerPenInfo");
   enable_non_client_dpi_scaling_ =
       user32_->ResolveFunction<EnableNonClientDpiScaling_*>(
           "EnableNonClientDpiScaling");
